@@ -3,6 +3,7 @@
 import Hero from './components/Hero/Hero.js'
 import SearchForm from './components/SearchForm/SearchForm.js'
 import List from './components/List/List.js'
+//import Column from './components/Column/Column.js'
 
 const App = () => {
   return (
