@@ -1,4 +1,4 @@
-import styles from './TextButton.module.scss';
+import styles from './Button.module.scss';
 
 
 const Button = props => {
