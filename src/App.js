@@ -1,17 +1,17 @@
-//import logo from './logo.svg';
-//import './App.css';
-import Hero from './components/Hero/Hero.js'
-import SearchForm from './components/SearchForm/SearchForm.js'
-import List from './components/List/List.js'
-//import Column from './components/Column/Column.js'
+
+import Container from './components/Container/Container'
+import Hero from './components/Hero/Hero'
+import SearchForm from './components/SearchForm/SearchForm'
+import List from './components/List/List'
+
 
 const App = () => {
   return (
-    <div>
+    <Container>
       <Hero />
       <SearchForm />
       <List />
-    </div>
+    </Container>
   )
 }
 
