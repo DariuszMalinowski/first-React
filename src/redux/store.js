@@ -30,6 +30,12 @@ const reducer = (state = initialState, action) => {
         ],
       };
 
+    case 'UPDATE_SEARCHSTRING':
+      return {
+      ...state,
+      searchString: action.payload,
+      };
+
     default:
       return state;
   }
