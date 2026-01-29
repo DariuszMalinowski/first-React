@@ -1,22 +1,11 @@
 import styles from './Column.module.scss';
 import Card from '../Card/Card';
 import CardForm from '../CardForm/CardForm';
-import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
+import { getFilteredCards } from '../../redux/store';
 
 const Column = ({ id, title, icon }) => {
-  const cards = useSelector(state => state.cards);
-  const searchString = useSelector(state => state.searchString);
-
-  const filteredCards = useMemo(
-    () =>
-      cards.filter(
-        card =>
-          card.columnId === id &&
-          card.title.toLowerCase().includes(searchString.toLowerCase())
-      ),
-    [cards, id, searchString]
-  );
+  const cards = useSelector(state => getFilteredCards(state, id));
 
   return (
     <article className={styles.column}>
@@ -25,7 +14,7 @@ const Column = ({ id, title, icon }) => {
         {title}
       </h2>
       <ul className={styles.cards}>
-        {filteredCards.map(card => (
+        {cards.map(card => (
           <Card key={card.id} title={card.title} />
         ))}
       </ul>
@@ -35,4 +24,3 @@ const Column = ({ id, title, icon }) => {
 };
 
 export default Column;
-
