@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 24px;
+  background-color: #262632;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #ebe3e3;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: #f3a310;
+}
