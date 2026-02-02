@@ -1,7 +1,9 @@
+import styles from './Favorite.module.scss';
+
 const Favorite = () => (
-  <section>
-    <h2>Ulubione</h2>
-    <p>Tutaj w przyszłości pojawią się polubione karty.</p>
+  <section className={styles.hero}>
+    <h2 className={styles.title}>FAVORITE</h2>
+    <p className={styles.subtitle}>Tutaj w przyszłości pojawią się polubione karty.</p>
   </section>
 );
 
