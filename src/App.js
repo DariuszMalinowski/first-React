@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Home from './pages/Home';
 import About from './pages/About';
 import Favorite from './pages/Favorite';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/favorite" element={<Favorite />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Container>
   );

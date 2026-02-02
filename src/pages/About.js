@@ -1,4 +1,4 @@
-import styles from './About.module.scss';
+import styles from './Pages.module.scss';
 
 const About = () => (
   <section className={styles.hero} >

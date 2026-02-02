@@ -1,4 +1,4 @@
-import styles from './Favorite.module.scss';
+import styles from './Pages.module.scss';
 
 const Favorite = () => (
   <section className={styles.hero}>
