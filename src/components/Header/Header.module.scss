@@ -1,3 +1,5 @@
+@import '../../styles/settings.scss';
+
 .header {
   display: flex;
   justify-content: flex-end;
@@ -17,6 +19,7 @@
   font-weight: 500;
 }
 
-.nav a:hover {
-  color: #f3a310;
+.nav a.linkActive {
+  color: $color-warning;
 }
+
