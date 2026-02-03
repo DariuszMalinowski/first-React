@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Home from './pages/Home';
 import About from './pages/About';
 import Favorite from './pages/Favorite';
+import List from './components/List/List';
 import NotFound from './pages/NotFound';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/favorite" element={<Favorite />} />
+        <Route path="/list/:id" element={<List />} /> 
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Container>
@@ -24,5 +26,6 @@ const App = () => {
 };
 
 export default App;
+
 
 

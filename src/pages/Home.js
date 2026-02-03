@@ -1,13 +1,14 @@
 import Hero from '../components/Hero/Hero';
 import SearchForm from '../components/SearchForm/SearchForm';
-import List from '../components/List/List';
+import Lists from '../components/Lists/Lists'; // import nowego komponentu
+import styles from './Pages.module.scss';
 
 const Home = () => {
   return (
     <>
       <Hero />
       <SearchForm />
-      <List />
+      <Lists />
     </>
   );
 };
