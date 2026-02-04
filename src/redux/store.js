@@ -43,6 +43,13 @@ export const getColumnsByList = createSelector(
 // selektor wszystkich list
 export const getAllLists = listsSelector;
 
+// selektor ulubionych kart
+export const getFavoriteCards = createSelector(
+  [state => state.cards],
+  cards => cards.filter(card => card.isFavorite)
+);
+
+
 // ========================
 // ACTION CREATORS
 // ========================
@@ -51,6 +58,7 @@ export const addCard = payload => ({ type: 'ADD_CARD', payload });
 export const updateSearchString = payload => ({ type: 'UPDATE_SEARCHSTRING', payload });
 export const addList = payload => ({ type: 'ADD_LIST', payload });
 export const clearSearchString = () => ({ type: 'CLEAR_SEARCHSTRING', });
+export const toggleCardFavorite = payload => ({ type: 'TOGGLE_CARD_FAVORITE', payload });
 
 
 // ========================
@@ -79,9 +87,21 @@ const reducer = (state = initialState, action) => {
             id: shortid(),
             title: action.payload.title,
             columnId: action.payload.columnId,
+            isFavorite: false,  // ✅ dodajemy domyślnie false
           },
         ],
       };
+
+    case 'TOGGLE_CARD_FAVORITE':
+      return {
+        ...state,
+        cards: state.cards.map(card =>
+          card.id === action.payload
+            ? { ...card, isFavorite: !card.isFavorite }
+            : card
+        ),
+      };
+
 
     case 'UPDATE_SEARCHSTRING':
       return {

@@ -1,15 +1,7 @@
 const initialState = {
   lists: [
-    {
-      id: '1',
-      title: 'Things to do...',
-      description: 'Interesting things I want to check out',
-    },
-    {
-      id: '2',
-      title: 'Test list',
-      description: 'Lorem Ipsum',
-    },
+    { id: '1', title: 'Things to do...', description: 'Interesting things I want to check out' },
+    { id: '2', title: 'Test list', description: 'Lorem Ipsum' },
   ],
 
   columns: [
@@ -19,14 +11,13 @@ const initialState = {
     { id: '4', title: 'Songs', icon: 'music', listId: '2' },
   ],
 
-
   cards: [
-    { id: '1', columnId: '1', title: 'This is Going to Hurt' },
-    { id: '2', columnId: '1', title: 'Interpreter of Maladies' },
-    { id: '3', columnId: '2', title: 'Harry Potter' },
-    { id: '4', columnId: '2', title: 'Star Wars' },
-    { id: '5', columnId: '3', title: 'The Witcher' },
-    { id: '6', columnId: '3', title: 'Skyrim' },
+    { id: '1', columnId: '1', title: 'This is Going to Hurt', isFavorite: false },
+    { id: '2', columnId: '1', title: 'Interpreter of Maladies', isFavorite: false },
+    { id: '3', columnId: '2', title: 'Harry Potter', isFavorite: false },
+    { id: '4', columnId: '2', title: 'Star Wars', isFavorite: false },
+    { id: '5', columnId: '3', title: 'The Witcher', isFavorite: false },
+    { id: '6', columnId: '3', title: 'Skyrim', isFavorite: false },
   ],
 
   searchString: '',
