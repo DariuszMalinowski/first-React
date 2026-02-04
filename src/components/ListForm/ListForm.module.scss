@@ -1,0 +1,50 @@
+@use "sass:math";
+@import '../../styles/settings.scss';
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: row; // inputy obok siebie na desktopie
+  gap: 20px;
+  width: 75%;
+
+  @media (max-width: 768px) {
+    flex-direction: column; // pod sobą na mobilnych
+  }
+
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1; // oba inputy zajmują równą szerokość
+  }
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  height: 40px;
+  padding: 0 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  //align-self: center;
+  //padding: 10px 20px;
+  //font-size: 16px;
+  //cursor: pointer;
+}

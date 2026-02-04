@@ -25,18 +25,20 @@ export const getFilteredCards = createSelector(
     )
 );
 
-// memoizowany selektor wszystkich kolumn
+// selektor wszystkich kolumn (nie trzeba memoizować, bo zwraca zawsze ten sam array)
 export const getAllColumns = columnsSelector;
 
 // memoizowany selektor listy po ID
-export const getListById = (state, listId) =>
-  state.lists.find(list => list.id === listId);
-
+export const getListById = createSelector(
+  [listsSelector, (_, listId) => listId],
+  (lists, listId) => lists.find(list => list.id === listId)
+);
 
 // memoizowany selektor kolumn dla konkretnej listy
-export const getColumnsByList = ({ columns }, listId) =>
-  columns.filter(column => column.listId === listId);
-
+export const getColumnsByList = createSelector(
+  [columnsSelector, (_, listId) => listId],
+  (columns, listId) => columns.filter(column => column.listId === listId)
+);
 
 // selektor wszystkich list
 export const getAllLists = listsSelector;
@@ -47,13 +49,15 @@ export const getAllLists = listsSelector;
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
 export const addCard = payload => ({ type: 'ADD_CARD', payload });
 export const updateSearchString = payload => ({ type: 'UPDATE_SEARCHSTRING', payload });
+export const addList = payload => ({ type: 'ADD_LIST', payload });
+export const clearSearchString = () => ({ type: 'CLEAR_SEARCHSTRING', });
+
 
 // ========================
 // REDUCER
 // ========================
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-
     case 'ADD_COLUMN':
       return {
         ...state,
@@ -84,6 +88,22 @@ const reducer = (state = initialState, action) => {
         ...state,
         searchString: action.payload,
       };
+
+    case 'ADD_LIST':
+      return {
+        ...state,
+        lists: [
+          ...state.lists,
+          action.payload,
+        ],
+      };
+
+    case 'CLEAR_SEARCHSTRING':
+      return {
+        ...state,
+        searchString: '',
+      };
+
 
     default:
       return state;
