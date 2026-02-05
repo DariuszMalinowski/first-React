@@ -7,11 +7,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
-import {
-  getListById,
-  getColumnsByList,
-  clearSearchString,
-} from '../../redux/store';
+import { getListById } from '../../redux/listsRedux';
+import { getColumnsByList } from '../../redux/columnsRedux';
+import { clearSearchString } from '../../redux/searchStringRedux';
+
 
 const List = () => {
   const { id } = useParams();

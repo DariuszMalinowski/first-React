@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
-import { getFavoriteCards } from '../redux/store';
 import Card from '../components/Card/Card';
 import styles from './Pages.module.scss';
+import { getFavoriteCards } from '../redux/cardsRedux';
+
 
 const Favorite = () => {
   const favoriteCards = useSelector(getFavoriteCards);
@@ -18,8 +19,8 @@ const Favorite = () => {
           <Card
             key={card.id}
             id={card.id}
-            title={card.title}          // ✅ upewnij się, że title jest przekazywane
-            isFavorite={card.isFavorite} // ✅ i isFavorite
+            title={card.title}
+            isFavorite={card.isFavorite}
           />
         ))}
       </ul>

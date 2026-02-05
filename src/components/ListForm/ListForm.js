@@ -3,8 +3,9 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import shortid from 'shortid';
 import Button from '../Button/Button';
-import { addList } from '../../redux/store';
 import styles from './ListForm.module.scss';
+import { addList } from '../../redux/listsRedux';
+
 
 const ListForm = () => {
   const [title, setTitle] = useState('');
